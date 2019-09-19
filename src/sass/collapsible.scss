@@ -1,0 +1,45 @@
+.Collapsible {
+  position:relative;
+
+  .Collapsible__trigger {    
+    background: $white;
+    height: 48px;
+    width: 100%;
+    display:flex;
+    align-content: space-between;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px rgba(196, 196, 196, 0.2);
+    
+    .Collapsible__trigger_header{
+      display:inline-block;      
+      text-align: left;
+      font-size: $font-lg;
+      padding: 15px;
+    }
+    .Collapsible__trigger_icon {
+      display: inline-block;  
+      margin-left: auto;
+      padding: 15px;
+      svg{
+        width: 18px;
+        height: auto;
+      }
+    }
+  }
+  .Collapsible__contentOuter {
+    position: absolute;
+    top: 24px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px rgba(196, 196, 196, 0.2);
+    color: $dark;
+    font-size: $font-sm;
+    z-index: -1;
+    padding-top: 24px;
+  }
+
+  .Collapsible__contentInner {
+    padding: 15px;
+  }
+
+}

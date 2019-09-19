@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #E0E6EE;
+  color: $blue;
+  font-family: 'Barlow', sans-serif;
+  font-weight: $font-normal;
+}
+
+#app {
+  width: 790px;
+  margin: 0 auto;
+  text-align: center;
+}
