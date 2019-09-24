@@ -1,23 +1,24 @@
-.Collapsible {
-  position:relative;
+.Collapsible {  
+  margin-bottom: $spacing-sm;
+  width: 100%;     
 
   .Collapsible__trigger {    
+    position: relative;
     background: $white;
     height: 48px;
     width: 100%;
     display:flex;
     align-content: space-between;
     border-radius: 4px;
-    box-shadow: 0px 4px 12px rgba(196, 196, 196, 0.2);
+    box-shadow: 0px 2px 1px rgba(196, 196, 196, 0.2);
+    z-index: 1; 
     
-    .Collapsible__trigger_header{
-      display:inline-block;      
+    .Collapsible__trigger_header{            
       text-align: left;
       font-size: $font-lg;
-      padding: 15px;
+      padding: 14px 15px  ;
     }
     .Collapsible__trigger_icon {
-      display: inline-block;  
       margin-left: auto;
       padding: 15px;
       svg{
@@ -26,20 +27,23 @@
       }
     }
   }
+
+  .is-open {
+    box-shadow: 0px 4px 12px rgba(224, 230, 238, 0.5);
+  }
+
   .Collapsible__contentOuter {
-    position: absolute;
-    top: 24px;
+    position:relative;
+    top: -10px;        
     background: #FFFFFF;
-    border-radius: 4px;
-    box-shadow: 0px 2px 1px rgba(196, 196, 196, 0.2);
+    border-radius: 4px;    
     color: $dark;
-    font-size: $font-sm;
-    z-index: -1;
-    padding-top: 24px;
+    font-size: $font-sm;   
+    width: 100%;
+    z-index: 0;  
   }
 
-  .Collapsible__contentInner {
-    padding: 15px;
+  .Collapsible__contentInner {    
+    padding: $spacing-sm;      
   }
-
 }

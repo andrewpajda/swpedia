@@ -1,13 +1,28 @@
-#loader{
-  svg.loader-icon-svg{
+.loader-large {
+  height: 480px;
+  padding: 215px;
+  .loader-icon-large-svg {
     width: 50px;
     height: auto;
-    animation: spin 1s linear infinite;
-
-    @keyframes spin {
-      100%{
-        transform: rotate(360deg);
-      }
-    }
   }
+}
+
+.loader-small {
+  height: 100px;
+  padding: 50%;
+
+  .loader-icon-small-svg {
+    width: 24px;
+    height: auto;
+  }
+}
+
+.loader-icon-svg {
+  animation: spin 1s linear infinite;
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg)
+    }
+  } 
 }

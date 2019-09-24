@@ -1,0 +1,33 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;  
+  font-weight: 400;
+
+  .table-row{
+    height: 40px;  
+    padding: $spacing-sm;
+  }
+  
+  .table-sort-button-svg {
+    width: 12px;
+    height: 12px;    
+  }
+
+  .table-column {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .table-main-column {
+    text-align: left;
+    color: $blue;
+    font-weight: 400;
+  }
+
+  
+  
+
+  .table-header {
+    border-bottom: 1px solid #C4C4C4;
+  }
+}

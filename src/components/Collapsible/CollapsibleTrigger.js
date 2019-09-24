@@ -5,14 +5,16 @@ import InlineSVG from 'react-svg-inline';
 const CollapsibleTrigger = (props) => {
   return (
     <React.Fragment>
-      <h3 className="Collapsible__trigger_header">{props.headerText}</h3>
-      <InlineSVG component="div" svg={props.icon} className="Collapsible__trigger_icon"/>
+      <h3
+        className="Collapsible__trigger_header"
+      >{props.headerText}</h3>
+      <InlineSVG
+        component="div"
+        svg={props.icon}
+        className="Collapsible__trigger_icon"
+      />
     </React.Fragment>
   );
-}
-
-CollapsibleTrigger.propTypes = {
-  headerText: propTypes.string.isRequired,
 }
 
 export default CollapsibleTrigger;
