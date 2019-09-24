@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import InlineSVG from 'react-svg-inline';
-import deleteIcon from '../assets/DELETE.svg';
+import deleteIcon from '../assets/DELETE.svg?inline';
 
 class Form extends Component {
   state = {

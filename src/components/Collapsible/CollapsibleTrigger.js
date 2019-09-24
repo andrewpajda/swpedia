@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+
 import InlineSVG from 'react-svg-inline';
 
 const CollapsibleTrigger = (props) => {
@@ -15,6 +16,11 @@ const CollapsibleTrigger = (props) => {
       />
     </React.Fragment>
   );
+}
+
+CollapsibleTrigger.propTypes = {
+  headerText: propTypes.string.isRequired,
+  icon: propTypes.string.isRequired,
 }
 
 export default CollapsibleTrigger;

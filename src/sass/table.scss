@@ -5,7 +5,22 @@
 
   .table-row{
     height: 40px;  
-    padding: $spacing-sm;
+    padding: $spacing-sm 0;
+
+    th {
+      width: 76px;
+      
+      p {
+        display: inline-block;        
+        width: 50px;        
+      }
+      
+      span.table-sort-button {
+        display: inline-block;
+        margin: 14px 0 14px 8px;
+        width: 8px;
+      }
+    }
   }
   
   .table-sort-button-svg {
@@ -13,13 +28,28 @@
     height: 12px;    
   }
 
+  .table-column-header {
+    text-align: center;
+    width: 76px;
+    font-weight: 400;   
+  }
+
+  .table-main-column-header {
+    text-align: left;
+    width: 76px;
+    color: $blue;
+    font-weight: 400;
+  }
+
   .table-column {
     text-align: center;
-    font-weight: 400;
+    width: 76px;
+    font-weight: 400;   
   }
 
   .table-main-column {
     text-align: left;
+    width: 76px;
     color: $blue;
     font-weight: 400;
   }

@@ -1,25 +1,36 @@
 import React from 'react';
-import TableComponent from './TableComponent';
+import propTypes from 'prop-types';
+
+import Table from './Table/TableComponent';
+import TableMobile from './Table/TableMobileComponent'; 
 import Loader from './LoaderComponent';
-import MOVIE_COLUMNS from '../utilities/constants';
+
+const isMobile = window.innerWidth < 769
 
 const MovieDetails = (props) => {
   return (
     <div className="movie-details">
       {
         props.film.planets.length ?
-        <TableComponent 
-          data={props.film.planets}
-          columns={MOVIE_COLUMNS}
-        />
+          isMobile ?
+            <TableMobile
+              data={props.film.planets}              
+            />
+            :
+            <Table
+              data={props.film.planets}
+            />
         :
-        <Loader 
-          loaderClassName="loader-small"
-          loaderIconClassName="loader-icon-small"
-        />
+            <Loader
+              loaderClassName="loader-small"
+              loaderIconClassName="loader-icon-small"
+            />
       }
     </div>
-    );
+  );
 }
- 
+
+MovieDetails.propTypes = {
+  film: propTypes.object.isRequired
+}
 export default MovieDetails;

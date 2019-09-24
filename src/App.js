@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import ls from 'local-storage';
+import propTypes from 'prop-types';
 
 import Header from './layout/Header';
 import Main from './layout/Main';
 import AddMovie from './layout/AddMovie';
+import Footer from './layout/Footer'
+
 import Movie from './models/movie';
 import Planet from './models/planet';
+
+import axios from 'axios';
+import ls from 'local-storage';
 
 class App extends Component {
   state = {
@@ -23,6 +27,7 @@ class App extends Component {
         <AddMovie
           addMovie={this.addMovie}
         />
+        <Footer />
       </div>
     );
   }
@@ -98,8 +103,7 @@ class App extends Component {
   addMovie = (title, planets) => {
     const id = this.state.films.length;
     const planetUrls = planets.map(planet => planet.url)    
-    const movie = new Movie(id, title, planetUrls, [])
-    console.log(movie);
+    const movie = new Movie(id, title, planetUrls, [])    
     let films = this.state.films;
     films = [...films, movie]
     this.setState({
@@ -107,6 +111,10 @@ class App extends Component {
     })
     ls.set('films', films)
   }
+}
+
+App.propTypes = {
+  url: propTypes.string.isRequired
 }
 
 export default App;

@@ -1,8 +1,11 @@
 import React from 'react'
+import propTypes from 'prop-types';
+
 import Collapsible from 'react-collapsible';
 import CollapsibleTrigger from './CollapsibleTrigger';
-import openIcon from '../../assets/ARROW OPEN.svg';
-import closeIcon from '../../assets/ARROW CLOSE.svg';
+
+import openIcon from '../../assets/ARROW OPEN.svg?inline';
+import closeIcon from '../../assets/ARROW CLOSE.svg?inline';
 
 
 const CollapsibleComponent = (props) => {
@@ -27,7 +30,7 @@ const CollapsibleComponent = (props) => {
       {
         () => {
           if (props.onOpening) {
-            props.onOpening(props.model.id)
+            props.onOpening(props.film.id)
           }
         }
       }
@@ -36,6 +39,13 @@ const CollapsibleComponent = (props) => {
       {props.content}
     </Collapsible>
   );
+}
+
+CollapsibleComponent.propTypes = {
+  film: propTypes.object,
+  headerText: propTypes.string.isRequired,
+  onOpening: propTypes.func, //optional
+  content: propTypes.element.isRequired
 }
 
 export default CollapsibleComponent;

@@ -3,8 +3,11 @@
   text-align: right;
   color: #555555;
   font-size: $font-sm;
-  overflow: visible;
-  
+
+  @include mobile-sm {
+    padding: 22px 10px 12px 10px;
+  }
+
   .form-label {
     width: 100%;    
     display: inline-block;
@@ -26,20 +29,29 @@
     }
   }
 
+  .form-input:focus {
+    outline: none;
+  }
+
   #planet-search-input {     
-    background-size: 30%;
+    background-size: 16px;
     background-repeat: no-repeat;
-    background-image: url('../assets//SEARCH.svg');
+    background-image: url('../assets//SEARCH.svg?external');
     background-position: center right;
   }  
 
+  #planet-search-input:focus {     
+    background-color:#FDFFE2;
+    outline: none;
+  } 
+
   .planet-list-container {
     position: relative; 
-
+    top: -15px;
+    
     .planet-list {
       background: $white;
       position:absolute;      
-      top: -15px;
       width: 100%;
       list-style: none;
       text-align: left;
@@ -47,8 +59,8 @@
       box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.5);
   
       .planet-list-item {
-        font-size: inherit;
-        padding: 20px;
+        font-size: $font-lg;
+        padding: 11px;
       }
     }
   }
@@ -56,6 +68,7 @@
   .chosen-planets {
     display: flex;
     flex-wrap: wrap;
+
     .planet-icon {
       height: 32px;
       width: 122px;
@@ -103,6 +116,14 @@
     color: $white;
     font-weight: 700;
     letter-spacing: 0.05em;
+
+    @include mobile-sm {
+      width: 100%;
+    }
+  }
+
+  .form-submit-button:hover {
+    cursor: pointer;
   }
   .--disabled {
     background: $gray;

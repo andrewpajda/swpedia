@@ -23,7 +23,8 @@ const Main = (props) => {
 }
 
 Main.propTypes = {
-  films: propTypes.array
+  films: propTypes.array.isRequired,
+  fetchPlanets: propTypes.func.isRequired
 }
 
 export default Main;

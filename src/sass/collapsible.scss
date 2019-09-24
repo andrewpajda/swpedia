@@ -1,6 +1,6 @@
 .Collapsible {  
   margin-bottom: $spacing-sm;
-  width: 100%;     
+  width: 100%;      
 
   .Collapsible__trigger {    
     position: relative;
@@ -44,6 +44,10 @@
   }
 
   .Collapsible__contentInner {    
-    padding: $spacing-sm;      
+    padding: $spacing-sm; 
+    
+    @include mobile-sm {
+      padding: 0;
+    }
   }
 }

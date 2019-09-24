@@ -21,13 +21,22 @@ module.exports = {
         use: [          
           'style-loader',
           'css-loader',  
-          'sass-loader',
-          'resolve-url-loader', 
+          'sass-loader',          
         ],
       },
       {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        test: /\.svg$/,  
+        oneOf: [
+          {
+            resourceQuery: /inline/, 
+            use: 'svg-inline-loader'
+          },
+          {
+            resourceQuery: /external/,
+            use: 'file-loader'
+          }
+        ]      
+        // loader: 'svg-inline-loader'
       },  
     ]
   },

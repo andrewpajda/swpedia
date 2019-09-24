@@ -1,6 +1,8 @@
 import React from 'react';
+
 import InlineSVG from 'react-svg-inline';
-import logo from '../assets/LOGO.svg';
+
+import logo from '../assets/LOGO.svg?inline';
 
 const Header = () => {
   return (

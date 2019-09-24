@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import sortIcon from '../assets/SORT.svg';
-import sortUpIcon from '../assets/SORT_UP.svg';
-import sortDownIcon from '../assets/SORT_DOWN.svg';
+import propTypes from 'prop-types';
+
+import sortIcon from '../../assets/SORT.svg?inline';
+import sortUpIcon from '../../assets/SORT_UP.svg?inline';
+import sortDownIcon from '../../assets/SORT_DOWN.svg?inline';
+
 import InlineSVG from 'react-svg-inline';
-import { MOVIE_COLUMNS } from '../utilities/constants';
+import { MOVIE_COLUMNS } from '../../utilities/constants';
 
-
-class TableComponent extends Component {
+class Table extends Component {
   state = {
     data: this.props.data,
     sortIcons:{
@@ -27,14 +29,14 @@ class TableComponent extends Component {
             {
               MOVIE_COLUMNS.map((column) => {
                 const {sort, sortIcons,} = this.state;
-                let thClassName = column.name === 'Planet Name' ? 'table-main-column' : 'table-column'
+                let thClassName = column.name === 'Planet Name' ? 'table-main-column-header' : 'table-column-header'
                 let sortIcon = sort.key === column.accessor ? sortIcons[sort.order] : sortIcons.initial
                 return (
                   <th
                     key={column.name}
                     className={thClassName}                    
                   >
-                    {column.name}
+                    <p className ="table-column-name">{column.name}</p>
                     <InlineSVG
                       svg={sortIcon}
                       className="table-sort-button"                      
@@ -104,4 +106,8 @@ class TableComponent extends Component {
   }
 }
 
-export default TableComponent;
+Table.propTypes = {
+  data:propTypes.array.isRequired
+}
+
+export default Table;

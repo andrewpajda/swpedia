@@ -11,10 +11,21 @@ body {
 }
 
 #app {
-  width: 790px;
+  max-width: 790px;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 30px;  
   text-align: center;
+
+  @include mobile-sm {
+    padding: 10px;
+  }
+}
+
+footer {
+  font-size: $font-sm;
+  padding: 20px; 
+  color: $dark;
 }
 
 h3 {

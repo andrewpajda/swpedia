@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import CollapsibleComponent from './Collapsible/CollapsibleComponent';
 import propTypes from 'prop-types';
+
+import CollapsibleComponent from './Collapsible/CollapsibleComponent';
 import MovieDetails from './MovieDetailsComponent';
 
 class ResultList extends Component {
@@ -12,7 +13,7 @@ class ResultList extends Component {
           this.props.films.map((film) => {
             return (
               <CollapsibleComponent
-                model={film}
+                film={film}
                 key={film.id}                               
                 headerText={film.title} 
                 onOpening={this.props.fetchPlanets}
@@ -31,7 +32,8 @@ class ResultList extends Component {
 }
 
 ResultList.propTypes = {
-  films: propTypes.array
+  films: propTypes.array.isRequired,
+  fetchPlanets: propTypes.func.isRequired
 }
 
 export default ResultList;
